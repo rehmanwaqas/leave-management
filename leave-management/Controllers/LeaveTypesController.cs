@@ -9,8 +9,11 @@ using leave_management.Repository ;
 using leave_management.Data;
 using leave_management.Models;
 using AutoMapper ;
+using Microsoft.AspNetCore.Authorization;
+
 namespace leave_management.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class LeaveTypesController : Controller
     {
         private readonly ILeaveTypeRepository _repo ;
@@ -20,7 +23,7 @@ namespace leave_management.Controllers
             _repo = repo ;
             _mapper = mapper ;
         }
-
+        
         // GET: LeaveTypes
         public ActionResult Index() {
             var leaveTypes = _repo.FindAll().ToList() ;
