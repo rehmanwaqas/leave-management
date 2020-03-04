@@ -14,7 +14,12 @@ namespace leave_management.Repository
         public LeaveAllocationRepository(ApplicationDbContext db) {
             _db = db;
         }
-        
+        public LeaveAllocation GetLeaveAllocationsByEmployeeAndType(string employeeId, int leaveTypeId)
+        {
+            return FindAll()
+                .FirstOrDefault(q => (q.EmployeeId == employeeId) && (q.Period == DateTime.Now.Year) && (q.LeaveTypeId == leaveTypeId)) ;
+        }
+
         public bool CheckAllocation(int leaveTypeId, string employeeId)
         {
             var period = DateTime.Now.Year;
