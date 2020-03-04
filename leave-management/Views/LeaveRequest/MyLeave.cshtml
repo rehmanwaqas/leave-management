@@ -67,7 +67,7 @@
             </td>
             <td>
                 @if (item.StartDate > DateTime.Now && !item.Cancelled) { 
-                    <a asp-action="CancelRequest" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('Are you sure want to cancel this request?')">
+                    <a asp-action="CancelRequest" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('Are you sure want to cancel this leave request?')">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </a>
                 }
