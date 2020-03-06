@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Leave Allocations</h1>
@@ -24,7 +23,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <a class="btn btn-outline-success" asp-action="SetLeave" asp-route-id="@item.Id"><i class="fa fa-pencil"></i> Allocate to Employee</a>
+                <a class="btn btn-outline-success" asp-action="SetLeave" asp-route-id="@item.Id"><i class="fas fa-user-edit"></i> Allocate to Employee</a>
                 @*Html.ActionLink("Allocate to Employee", "SetLeave", new { id = item.Id })*@
             </td>
         </tr>
